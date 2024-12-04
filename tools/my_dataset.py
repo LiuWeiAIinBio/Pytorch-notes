@@ -1,19 +1,49 @@
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 """
-# @file name  : dataset.py
-# @author     : yts3221@126.com
-# @date       : 2019-08-21 10:08:00
-# @brief      : 各数据集的Dataset定义
+# @file name  : my_dataset.py
+# @author     : 原作者为 yts3221@126.com，LiuWei https://github.com/LiuWeiAIinBio 增添部分内容
+# @date       : 2024-12-4
+# @brief      : 各数据集的 Dataset 定义
 """
+
+
 import numpy as np
+import pandas as pd
 import torch
 import os
 import random
 from PIL import Image
 from torch.utils.data import Dataset
 
+
 random.seed(1)
 rmb_label = {"1": 0, "100": 1}
+
+
+class linearRegressionDataset(Dataset):
+    def __init__(self, data_dir):
+        self.data = self.get_data(data_dir)
+
+    def __getitem__(self, index):
+        x, y = self.data[index]
+        x = torch.tensor(x, dtype=torch.float32)
+        y = torch.tensor(y, dtype=torch.float32)
+        return x, y
+
+    def __len__(self):
+        return len(self.data)
+
+    @staticmethod
+    def get_data(data_dir):
+        data = list()
+
+        with open(data_dir) as object:
+            for line in object:
+                part = line.strip().split(",")  # part: list[str]
+                x, y = map(float, part)
+                data.append((x, y))
+
+        return data
 
 
 class RMBDataset(Dataset):
