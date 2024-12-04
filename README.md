@@ -5,7 +5,14 @@ Pytorch学习笔记
 本部分笔记整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第二章。
 
 ## [2. 张量](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/2.%20%E5%BC%A0%E9%87%8F)
-本部分笔记整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第三章和龙良曲老师的视频课程。
+本部分笔记整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第三章和龙良曲老师的视频课程《龙良曲PyTorch入门到实战》。
 
 ## [3. 动态计算图和自动求导](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/3.%20%E5%8A%A8%E6%80%81%E8%AE%A1%E7%AE%97%E5%9B%BE%E5%92%8C%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC)
 本部分笔记整理自深度之眼推出的《深度学习PyTorch框架班》第一周课程。
+
+## [4_数据读取机制Dataloader与Dataset](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/4_%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96%E6%9C%BA%E5%88%B6Dataloader%E4%B8%8EDataset)
+本部分笔记整理自深度之眼推出的《深度学习PyTorch框架班》第二周课程。
+
+## [5_单变量线性回归](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/5_%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92)
+使用 Pytorch 实现单变量线性回归模型，使用 dataset 和 dataloader 加载数据集，数据集 ex1.txt 来自吴恩达机器学习课程。
+
