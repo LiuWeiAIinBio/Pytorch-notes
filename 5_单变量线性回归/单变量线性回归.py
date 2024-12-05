@@ -22,7 +22,7 @@ b = torch.randn(1, requires_grad=True)  # 偏置初始化
 
 # 迭代训练
 lr = 0.01
-MAX_EPOCH = 100
+MAX_EPOCH = 10000
 optimizer = torch.optim.SGD([w, b], lr)  # 定义优化器
 criterion = torch.nn.MSELoss()  # 定义损失函数
 
@@ -46,7 +46,7 @@ for epoch in range(MAX_EPOCH):
             # update weights
             optimizer.step()
 
-            if loss.data.numpy() < 1:
+            if loss.data.numpy() < 0.2:
                 print(w.data.numpy(), b.data.numpy(), loss.data.numpy(), epoch)
                 flag = False
                 break
