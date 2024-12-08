@@ -14,10 +14,10 @@ Pytorch 学习笔记
 本部分笔记整理自深度之眼推出的《深度学习PyTorch框架班》第二周课程。
 
 ## [5. 单变量线性回归](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/5_%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92)
-使用 Pytorch 实现单变量线性回归模型，使用 dataset 和 dataloader 加载数据集，dataset 子类定义在 ./tools/my_dataset.py 中，数据集 ex1.txt 来自吴恩达机器学习课程。
+本部分是我使用 Pytorch 实现单变量线性回归模型，非视频课笔记，主要是练习自定义 dataset 子类，及使用 dataset 和 dataloader 加载数据集，dataset 子类定义在 ./tools/my_dataset.py 中，数据集 ex1.txt 来自吴恩达机器学习课程。
 
 ## [6. 逻辑回归](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/6_%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92)
-使用 Pytorch 实现逻辑回归模型，使用 dataset 和 dataloader 加载数据集，dataset 子类定义在 ./tools/my_dataset.py 中，数据集 ex2data1.txt 来自吴恩达机器学习课程。
+本部分是我使用 Pytorch 实现逻辑回归模型，非视频课笔记，主要是练习自定义 dataset 子类，及使用 dataset 和 dataloader 加载数据集，dataset 子类定义在 ./tools/my_dataset.py 中，数据集 ex2data1.txt 来自吴恩达机器学习课程。
 
 ## [7. transforms模块机制和数据预处理方法](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/7_transforms%E6%A8%A1%E5%9D%97%E6%9C%BA%E5%88%B6%E5%92%8C%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
-介绍了 transforms 模块的运行机制，并且介绍了数种 transforms 模块的数据预处理方法。
+本部分笔记整理自深度之眼推出的《深度学习PyTorch框架班》第二周课程，介绍了 transforms 模块的运行机制，并且介绍了数种 transforms 模块的数据预处理方法。
