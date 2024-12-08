@@ -7,13 +7,13 @@
 """
 
 import torch
-from tools.my_dataset import linearRegressionDataset
+from tools.my_dataset import LinearRegressionDataset
 from torch.utils.data import DataLoader
 
 # 数据
 BATCH_SIZE = 10
 train_dir = "./ex1.txt"
-train_data = linearRegressionDataset(data_dir=train_dir)
+train_data = LinearRegressionDataset(data_dir=train_dir)
 train_loader = DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffle=True)
 
 # 模型参数

@@ -19,7 +19,7 @@ random.seed(1)
 rmb_label = {"1": 0, "100": 1}
 
 
-class linearRegressionDataset(Dataset):
+class LinearRegressionDataset(Dataset):
     def __init__(self, data_dir):
         self.data = self.get_data(data_dir)
 
@@ -41,6 +41,33 @@ class linearRegressionDataset(Dataset):
                 part = line.strip().split(",")  # part: list[str]
                 x, y = map(float, part)
                 data.append((x, y))
+
+        return data
+
+
+class LogisticRegressionDataset(Dataset):
+    def __init__(self, data_dir):
+        self.data = self.get_data(data_dir)
+
+    def __getitem__(self, index):
+        x1, x2, y = self.data[index]
+        x1 = torch.tensor(x1, dtype=torch.float32)
+        x2 = torch.tensor(x2, dtype=torch.float32)
+        y = torch.tensor(y, dtype=torch.float32)
+        return x1, x2, y
+
+    def __len__(self):
+        return len(self.data)
+
+    @staticmethod
+    def get_data(data_dir):
+        data = []
+
+        with open(data_dir) as object:
+            for line in object:
+                part = line.strip().split(",")
+                x1, x2, y = map(float, part)
+                data.append((x1, x2, y))
 
         return data
 
