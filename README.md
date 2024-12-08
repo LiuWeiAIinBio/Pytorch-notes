@@ -20,4 +20,4 @@ Pytorch 学习笔记
 使用 Pytorch 实现逻辑回归模型，使用 dataset 和 dataloader 加载数据集，数据集 ex2data1.txt 来自吴恩达机器学习课程。
 
 ## [7. transforms模块机制和数据预处理方法](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/7_transforms%E6%A8%A1%E5%9D%97%E6%9C%BA%E5%88%B6%E5%92%8C%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
-介绍 transforms 模块的运行机制，并且介绍了数种 transforms 模块的数据预处理方法。
+介绍了 transforms 模块的运行机制，并且介绍了数种 transforms 模块的数据预处理方法。
