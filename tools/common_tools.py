@@ -43,10 +43,11 @@ def transform_invert(img_, transform_train):
 
 
 def set_seed(seed=1):
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
+    torch.manual_seed(seed)  # 为 CPU 设置随机种子
+    torch.cuda.manual_seed(seed)  # 为 GPU 设置随机种子
+    torch.cuda.manual_seed_all(seed)  # 如果使用多块 GPU，应该调用这个函数
+    np.random.seed(seed)  # 为 numpy 设置随机种子
+    random.seed(seed)  # 为 python 自带的 random 模块设置随机种子
 
 
 def get_memory_info():

@@ -15,60 +15,60 @@ import torchvision.transforms as transforms
 import torch.optim as optim
 from matplotlib import pyplot as plt
 
-path_lenet = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "model", "lenet.py"))
-path_tools = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "tools", "common_tools.py"))
-assert os.path.exists(path_lenet), "{}不存在，请将lenet.py文件放到 {}".format(path_lenet, os.path.dirname(path_lenet))
-assert os.path.exists(path_tools), "{}不存在，请将common_tools.py文件放到 {}".format(path_tools, os.path.dirname(path_tools))
-
-import sys
-hello_pytorch_DIR = os.path.abspath(os.path.dirname(__file__)+os.path.sep+".."+os.path.sep+"..")
-sys.path.append(hello_pytorch_DIR)
+# path_lenet = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "model", "lenet.py"))
+# path_tools = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "tools", "common_tools.py"))
+# assert os.path.exists(path_lenet), "{}不存在，请将lenet.py文件放到 {}".format(path_lenet, os.path.dirname(path_lenet))
+# assert os.path.exists(path_tools), "{}不存在，请将common_tools.py文件放到 {}".format(path_tools, os.path.dirname(path_tools))
+#
+# import sys
+# hello_pytorch_DIR = os.path.abspath(os.path.dirname(__file__)+os.path.sep+".."+os.path.sep+"..")
+# sys.path.append(hello_pytorch_DIR)
 
 from models.lenet import LeNet
 from tools.my_dataset import RMBDataset
 from tools.common_tools import set_seed
 
 
-set_seed()  # 设置随机种子
-rmb_label = {"1": 0, "100": 1}
-
-# 参数设置
-MAX_EPOCH = 10
-BATCH_SIZE = 16
-LR = 0.01
-log_interval = 10
-val_interval = 1
-
-# ============================ step 1/5 数据 ============================
-split_dir = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "data", "rmb_split"))
-if not os.path.exists(split_dir):
-    raise Exception(r"数据 {} 不存在, 回到lesson-06\1_split_dataset.py生成数据".format(split_dir))
-train_dir = os.path.join(split_dir, "train")
-valid_dir = os.path.join(split_dir, "valid")
-
-norm_mean = [0.485, 0.456, 0.406]
-norm_std = [0.229, 0.224, 0.225]
-
-train_transform = transforms.Compose([
-    transforms.Resize((32, 32)),
-    transforms.RandomCrop(32, padding=4),
-    transforms.ToTensor(),
-    transforms.Normalize(norm_mean, norm_std),
-])
-
-valid_transform = transforms.Compose([
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-    transforms.Normalize(norm_mean, norm_std),
-])
-
-# 构建MyDataset实例
-train_data = RMBDataset(data_dir=train_dir, transform=train_transform)
-valid_data = RMBDataset(data_dir=valid_dir, transform=valid_transform)
-
-# 构建DataLoder
-train_loader = DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffle=True)
-valid_loader = DataLoader(dataset=valid_data, batch_size=BATCH_SIZE)
+# set_seed()  # 设置随机种子
+# rmb_label = {"1": 0, "100": 1}
+#
+# # 参数设置
+# MAX_EPOCH = 10
+# BATCH_SIZE = 16
+# LR = 0.01
+# log_interval = 10
+# val_interval = 1
+#
+# # ============================ step 1/5 数据 ============================
+# split_dir = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "data", "rmb_split"))
+# if not os.path.exists(split_dir):
+#     raise Exception(r"数据 {} 不存在, 回到lesson-06\1_split_dataset.py生成数据".format(split_dir))
+# train_dir = os.path.join(split_dir, "train")
+# valid_dir = os.path.join(split_dir, "valid")
+#
+# norm_mean = [0.485, 0.456, 0.406]
+# norm_std = [0.229, 0.224, 0.225]
+#
+# train_transform = transforms.Compose([
+#     transforms.Resize((32, 32)),
+#     transforms.RandomCrop(32, padding=4),
+#     transforms.ToTensor(),
+#     transforms.Normalize(norm_mean, norm_std),
+# ])
+#
+# valid_transform = transforms.Compose([
+#     transforms.Resize((32, 32)),
+#     transforms.ToTensor(),
+#     transforms.Normalize(norm_mean, norm_std),
+# ])
+#
+# # 构建MyDataset实例
+# train_data = RMBDataset(data_dir=train_dir, transform=train_transform)
+# valid_data = RMBDataset(data_dir=valid_dir, transform=valid_transform)
+#
+# # 构建DataLoder
+# train_loader = DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffle=True)
+# valid_loader = DataLoader(dataset=valid_data, batch_size=BATCH_SIZE)
 
 # ============================ step 2/5 模型 ============================
 
