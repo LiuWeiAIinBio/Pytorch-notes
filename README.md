@@ -21,3 +21,6 @@ Pytorch 学习笔记
 
 ## [7. transforms模块机制和数据预处理方法](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/7_transforms%E6%A8%A1%E5%9D%97%E6%9C%BA%E5%88%B6%E5%92%8C%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
 本部分笔记整理自深度之眼推出的《深度学习PyTorch框架班》第二周课程，介绍了 transforms 模块的运行机制，并且介绍了数种 transforms 模块的数据预处理方法。
+
+## [8_nn.Module与模型创建](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/8_nn.Module%E4%B8%8E%E6%A8%A1%E5%9E%8B%E5%88%9B%E5%BB%BA)
+本部分笔记整理自深度之眼推出的《深度学习PyTorch框架班》第三周课程，.ipynb 文件详细地介绍了 Pytorch 的 nn 模块，.py 文件是 nn 模块的卷积层、池化层、全连接层、激活函数层等网络层的使用练习。
