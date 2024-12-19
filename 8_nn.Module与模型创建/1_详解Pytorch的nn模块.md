@@ -40,20 +40,20 @@ class LeNet(nn.Module):
 **所有的模型和网络层都是继承于 nn.Module 这个类**
 
 **torch.nn 有 4 个主要部分：**
-    
-    nn.Parameter：张量子类，存储为张量的形式，同样也具有张量的 8 个基本属性，表示可学习参数，如权重、偏置等
-    nn.Module：所有网络层基类，管理网络属性
-    nn.functional：包含函数的具体实现，如卷积、池化、激活函数等
-    nn.init：提供丰富的参数初始化方法
+
+- nn.Parameter：张量子类，存储为张量的形式，同样也具有张量的 8 个基本属性，表示可学习参数，如权重、偏置等
+- nn.Module：所有网络层基类，管理网络属性
+- nn.functional：包含函数的具体实现，如卷积、池化、激活函数等
+- nn.init：提供丰富的参数初始化方法
 
 **nn.Module 有 8 个重要的属性，以 `OrderedDict()` 有序字典的形式存放其取值，先介绍 2 个比较重要的属性：**
 
-    parameters：存储管理 nn.Parameter 类
-    modules：存储管理 nn.Module 类
-    buffers：存储管理缓冲属性
-    ***hooks：存储管理钩子函数，*** 代表有 5 个类似的属性
+- parameters：存储管理 nn.Parameter 类
+- modules：存储管理 nn.Module 类
+- buffers：存储管理缓冲属性
+- hooks：存储管理钩子函数，*** 代表有 5 个类似的属性
     
-    LeNet 继承于 nn.Module，所以 LeNet 类的实例具有 nn.Module 的 8 个重要属性，其中 modules 属性会在其有序字典中会存放前面构建网络层部分构建的网络层，这些网络层在构建时同样也是继承于 nn.Module，所以这些网络层也具有 nn.Module 的 8 个重要属性。即：一个 module 可以包含多个子 module，每个 module（module and 子 module）都有 8 个有序字典管理其属性。
+LeNet 继承于 nn.Module，所以 LeNet 类的实例具有 nn.Module 的 8 个重要属性，其中 modules 属性会在其有序字典中会存放前面构建网络层部分构建的网络层，这些网络层在构建时同样也是继承于 nn.Module，所以这些网络层也具有 nn.Module 的 8 个重要属性。即：一个 module 可以包含多个子 module，每个 module（module and 子 module）都有 8 个有序字典管理其属性。
 
 **在前面模型构建中，需要先在 `__init__()` 中初始化 nn.Module 父类的 `__init__()`，实现 nn.Module 属性的初始化，即生成 8 个空的有序字典管理 module 的属性：**
 
@@ -160,9 +160,9 @@ class LeNetSequentialOrderDict(nn.Module):
 
 主要方法：
 
-    append()：在 ModuleList 后面添加网络层
-    extend()：拼接两个 ModuleList
-    insert()：在 ModuleList 中指定位置插入网络层
+- append()：在 ModuleList 后面添加网络层
+- extend()：拼接两个 ModuleList
+- insert()：在 ModuleList 中指定位置插入网络层
 
 ```
 class ModuleList(nn.Module):
@@ -182,11 +182,11 @@ class ModuleList(nn.Module):
 
 主要方法：
 
-    clear()：清空 ModuleDict
-    items()：返回可迭代的键值对
-    keys()：返回字典的键
-    values()：返回字典的值
-    pop()：从字典中弹出一对键值，该对儿键值从字典中删除
+- clear()：清空 ModuleDict
+- items()：返回可迭代的键值对
+- keys()：返回字典的键
+- values()：返回字典的值
+- pop()：从字典中弹出一对键值，该对儿键值从字典中删除
 
 ```
 class ModuleDict(nn.Module):
@@ -210,11 +210,9 @@ class ModuleDict(nn.Module):
 
 **4) 总结**
 
-nn.Sequetial：顺序性，各网络层之间严格按照顺序，常用于模块构建，内部包含一个 for 循环前向传播机制，用于模块内网络层的前向传播
-
-nn.ModuleList：迭代性，常用于大量重复网络构建，通过 for 循环实现重复构建
-
-nn.ModuleDict：索引性，常用于可选择的网络层的构建
+- nn.Sequetial：顺序性，各网络层之间严格按照顺序，常用于模块构建，内部包含一个 for 循环前向传播机制，用于模块内网络层的前向传播
+- nn.ModuleList：迭代性，常用于大量重复网络构建，通过 for 循环实现重复构建
+- nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 <br/>
 
@@ -239,14 +237,14 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 主要参数：
 
-    in_channels：输入通道数
-    out_channels：输出通道数，等价于卷积核个数
-    kernel_size：卷积核尺寸
-    stride：步长
-    padding：填充宽度，主要是为了调整输出的特征图大小，一般把 padding 设置合适的值后，保持输入和输出的图像尺寸不变
-    dilation：卷积核扩张幅度，默认为 1，1 代表没有扩张；卷积核扩张主要是为了扩大视野
-    groups：分组卷积设置，主要是为了模型的轻量化
-    bias：偏置
+- in_channels：输入通道数
+- out_channels：输出通道数，等价于卷积核个数
+- kernel_size：卷积核尺寸
+- stride：步长
+- padding：填充宽度，主要是为了调整输出的特征图大小，一般把 padding 设置合适的值后，保持输入和输出的图像尺寸不变
+- dilation：卷积核扩张幅度，默认为 1，1 代表没有扩张；卷积核扩张主要是为了扩大视野
+- groups：分组卷积设置，主要是为了模型的轻量化
+- bias：偏置
 
 **2) nn.MaxPool2d()**
 
@@ -256,12 +254,12 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 主要参数：
 
-    kernel_size：池化核尺寸
-    stride：步长，通常与 kernel_size 一致，确保池化时不重叠
-    padding：填充宽度，主要是为了调整输出的特征图大小，一般把 padding 设置合适的值后，保持输入和输出的图像尺寸不变
-    dilation：池化核扩张幅度，默认为 1，1 代表没有扩张
-    ceil_mode：默认为 False，尺寸向下取整；为 True 时，尺寸向上取整
-    return_indices：为 True 时，返回最大值池化所使用的像素的索引，这些记录的索引通常在反最大值池化时使用，把像素放在对应的位置上
+- kernel_size：池化核尺寸
+- stride：步长，通常与 kernel_size 一致，确保池化时不重叠
+- padding：填充宽度，主要是为了调整输出的特征图大小，一般把 padding 设置合适的值后，保持输入和输出的图像尺寸不变
+- dilation：池化核扩张幅度，默认为 1，1 代表没有扩张
+- ceil_mode：默认为 False，尺寸向下取整；为 True 时，尺寸向上取整
+- return_indices：为 True 时，返回最大值池化所使用的像素的索引，这些记录的索引通常在反最大值池化时使用，把像素放在对应的位置上
 
 **3) nn.AvgPool2d()**
 
@@ -271,13 +269,13 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 主要参数：
 
-    kernel_size：池化核尺寸
-    stride：步长，通常与 kernel_size 一致，确保池化时不重叠
-    padding：填充宽度，主要是为了调整输出的特征图大小，一般把 padding 设置合适的值后，保持输入和输出的图像尺寸不变
-    dilation：池化核扩张幅度，默认为 1，1 代表没有扩张
-    ceil_mode：默认为 False，尺寸向下取整；为 True 时，尺寸向上取整
-    count_include_pad：在计算平均值时，是否把 padding 填充值考虑在内计算
-    divisor_override：除法因子。在计算平均值时，分子是像素值的总和，分母默认是像素值的个数；如果设置了 divisor_override，把分母改为 divisor_override
+- kernel_size：池化核尺寸
+- stride：步长，通常与 kernel_size 一致，确保池化时不重叠
+- padding：填充宽度，主要是为了调整输出的特征图大小，一般把 padding 设置合适的值后，保持输入和输出的图像尺寸不变
+- dilation：池化核扩张幅度，默认为 1，1 代表没有扩张
+- ceil_mode：默认为 False，尺寸向下取整；为 True 时，尺寸向上取整
+- count_include_pad：在计算平均值时，是否把 padding 填充值考虑在内计算
+- divisor_override：除法因子。在计算平均值时，分子是像素值的总和，分母默认是像素值的个数；如果设置了 divisor_override，把分母改为 divisor_override
 
 **4) nn.Linear()**
 
@@ -287,9 +285,9 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 主要参数：
 
-    in_features：输入结点数
-    out_features：输出结点数
-    bias：是否需要偏置
+- in_features：输入结点数
+- out_features：输出结点数
+- bias：是否需要偏置
 
 **5) nn.Sigmoid()**
 
@@ -301,9 +299,9 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 特性：
 
-    输出值在(0,1)，符合概率
-    导数/梯度范围是 [0, 0.25]，容易导致梯度消失
-    输出为非 0 均值，破坏数据分布
+- 输出值在(0,1)，符合概率
+- 导数/梯度范围是 `[0, 0.25]`，容易导致梯度消失
+- 输出为非 0 均值，破坏数据分布
 
 **6) nn.tanh()**
 
@@ -315,8 +313,8 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 特性：
 
-    输出值在(-1, 1)，数据符合 0 均值
-    导数/梯度范围是 (0,1)，梯度消失麻烦比 Sigmoid 小一些，但依然容易导致梯度消失
+- 输出值在(-1, 1)，数据符合 0 均值
+- 导数/梯度范围是 (0,1)，梯度消失麻烦比 Sigmoid 小一些，但依然容易导致梯度消失
 
 **7) nn.ReLU()**
 
@@ -328,15 +326,13 @@ nn.ModuleDict：索引性，常用于可选择的网络层的构建
 
 特性：
 
-    输出值均为正数，负半轴的导数为 0，容易导致死神经元
-    导数/梯度是 1，缓解梯度消失，但容易引发梯度爆炸
+- 输出值均为正数，负半轴的导数为 0，容易导致死神经元
+- 导数/梯度是 1，缓解梯度消失，但容易引发梯度爆炸
 
 **针对 RuLU 负半轴的导数为 0，会导致死神经元的缺点，介绍 3 种改进的 RuLU 激活函数：**
 
 - nn.LeakyReLU()：负半轴在第三象限有一个很小的倾斜，有一个参数 negative_slope 设置负半轴斜率
-
 - nn.PReLU()：有一个参数 init 设置初始斜率，这个斜率是可学习的
-    
 - nn.RReLU()：R 是 random 的意思，负半轴斜率每次都是随机取 `[lower, upper]` 之间的一个数
 
 <br/>
