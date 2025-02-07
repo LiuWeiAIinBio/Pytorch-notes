@@ -1,10 +1,11 @@
 # [Pytorch-notes](https://github.com/LiuWeiAIinBio/Pytorch-notes)
-Pytorch 学习笔记
 
-Pytorch 系列内容的学习历时两个多月，主要参考内容为：
+Pytorch 学习笔记的主要参考内容为：
 - 深度之眼《深度学习PyTorch框架班》：视频课地址为 `https://ai.deepshare.net/p/t_pc/course_pc_detail/video/v_5e9e5f6ddcef2_TCLvUDOF?product_id=p_5df0ad9a09d37_qYqVmt85&content_app_id=&type=6`，代码地址为 `https://github.com/JansonYuan/Pytorch-Camp`，一个比较详细的笔记 `https://pytorch.zhangxiann.com/`。
 - 伊莱·史蒂文斯的《PyTorch深度学习实战》的第二章和第三章
 - 龙良曲老师的《龙良曲PyTorch入门到实战》的课时 14 到课时 30，视频课地址为 `https://www.bilibili.com/video/BV12B4y1k7b5?vd_source=2e0bed8f939119c48817ce61f4f75bdd&spm_id_from=333.788.videopod.episodes`
+
+<br/>
 
 ## [01. 使用pytorch运行预训练模型](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/01_%E4%BD%BF%E7%94%A8pytorch%E8%BF%90%E8%A1%8C%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B)
 本部分笔记整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第二章。
@@ -34,7 +35,10 @@ transforms 是图片操作工具集，如果处理的数据是图片，需要在
 建立一个深度学习项目，第一步是准备数据，第二步是创建模型，第三步就是训练模型。在迭代训练模型之前，我们需要初始化模型的权值，选择损失函数，设置优化器和设置学习率调整策略，然后加载数据到模型中进行前向传播和反向传播更新参数，训练模型。本部分介绍了权值初始化方法、损失函数、优化器和学习率调整策略。
 
 ## [10_正则化Regularization](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/10_%E6%AD%A3%E5%88%99%E5%8C%96Regularization)
-过拟合是训练模型时的一种常见问题，我们可通过设置正则化手段来抑制过拟合，本部分介绍了三种正则化手段：一是在优化器中设置正则项；二是在模型中设置 Dropout 层；三是在模型中设置 Normalization 层。
+过拟合是训练模型时的一种常见问题，我们可通过设置正则化手段来抑制过拟合，本部分介绍了三种正则化手段：
+- 在优化器中设置正则项
+- 在模型中设置 Dropout 层
+- 在模型中设置 Normalization 层
 
 ## [11_可视化工具](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/11_%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7)
 本部分介绍了三种模型训练时的可视化工具：
