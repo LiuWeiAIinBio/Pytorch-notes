@@ -11,7 +11,7 @@ Pytorch 学习笔记的主要参考内容为：
 本部分笔记整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第二章。
 
 ## [02. 张量](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/02_%E5%BC%A0%E9%87%8F)
-深入理解 PyTorch 张量整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第三章，PyTorch 张量的常用 API 整理自龙良曲老师的视频课程《龙良曲PyTorch入门到实战》的课时 14 到课时 30。
+深入理解 PyTorch 张量整理自伊莱·史蒂文斯的《PyTorch深度学习实战》的第三章，PyTorch 张量的常用 API 整理自龙良曲老师的视频课程《龙良曲PyTorch入门到实战》的课时 14 到课时 30。学习张量的特殊乘法以及broadcasting自动扩展有助于我们理解张量计算。
 
 ## [03. 动态计算图和自动求导](https://github.com/LiuWeiAIinBio/Pytorch-notes/tree/main/03_%E5%8A%A8%E6%80%81%E8%AE%A1%E7%AE%97%E5%9B%BE%E5%92%8C%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC)
 动态计算图是 PyTorch 的基础，对理解整个 PyTorch 框架非常重要。
