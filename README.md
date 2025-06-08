@@ -1,9 +1,9 @@
 # [Pytorch-notes](https://github.com/LiuWeiAIinBio/Pytorch-notes)
 
 Pytorch 学习笔记的主要参考内容为：
-- 深度之眼《深度学习PyTorch框架班》：视频课地址为 `https://ai.deepshare.net/p/t_pc/course_pc_detail/video/v_5e9e5f6ddcef2_TCLvUDOF?product_id=p_5df0ad9a09d37_qYqVmt85&content_app_id=&type=6`，代码地址为 `https://github.com/JansonYuan/Pytorch-Camp`，一个比较详细的笔记 `https://pytorch.zhangxiann.com/`。
+- 深度之眼《深度学习PyTorch框架班》：视频课地址为 https://ai.deepshare.net/p/t_pc/course_pc_detail/video/v_5e9e5f6ddcef2_TCLvUDOF?product_id=p_5df0ad9a09d37_qYqVmt85&content_app_id=&type=6 ，代码地址为 https://github.com/JansonYuan/Pytorch-Camp ，一个比较详细的笔记 https://pytorch.zhangxiann.com/ 。
 - 伊莱·史蒂文斯的《PyTorch深度学习实战》的第二章和第三章
-- 龙良曲老师的《龙良曲PyTorch入门到实战》的课时 14 到课时 30，视频课地址为 `https://www.bilibili.com/video/BV12B4y1k7b5?vd_source=2e0bed8f939119c48817ce61f4f75bdd&spm_id_from=333.788.videopod.episodes`
+- 龙良曲老师的《龙良曲PyTorch入门到实战》的课时 14 到课时 30，视频课地址为 https://www.bilibili.com/video/BV12B4y1k7b5?vd_source=2e0bed8f939119c48817ce61f4f75bdd&spm_id_from=333.788.videopod.episodes
 
 <br/>
 
